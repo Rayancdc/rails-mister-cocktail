@@ -12,8 +12,9 @@ puts "#{Ingredient.count} ingredients in database"
 open("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list") do |response|
   puts "Generating seeds..."
   response.each do |string|
-    JSON.parse(string).each do |element|
-      Ingredient.create!(name: element["strIngredient1"])
+    result = JSON.parse(string)
+    result["drinks"].each do |e|
+      Ingredient.create!(name: e["strIngredient1"])
     end
   end
 end
