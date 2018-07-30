@@ -1,8 +1,20 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
+  <div class="nav-item">
+    <a href="/" class="navbar-wagon-brand">
     <%= image_tag 'cocktail-ice.png' %>
-  </a>
+    </a>
+    <div class="wrap shop-item">
+      <div class="search">
+      <form action="" method="GET">
+          <input type="text" name="search" class="searchTerm" placeholder="Search...">
+          <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right d-none d-md-block">

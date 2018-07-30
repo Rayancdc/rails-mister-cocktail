@@ -40,6 +40,8 @@
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
+  margin-right: 50px;
+  margin-left: 10px;
 }
 
 /* User Avatar */
@@ -98,4 +100,41 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+.nav-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search {
+  width: 100%;
+  position: relative
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  padding: 5px;
+  height: 26px;
+  border-radius: 5px;
+  outline: none;
+  color: $almost-black;
+}
+
+.searchTerm:focus{
+  color: $almost-black;
+}
+
+.searchButton {
+  position: absolute;
+  right: 0px;
+  width: 30px;
+  height: 26px;
+  border: 0px solid $almost-black;
+  background: $light-gray;
+  text-align: center;
+  color: $gray;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
 }

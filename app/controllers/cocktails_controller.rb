@@ -1,10 +1,22 @@
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.all
+    @search = params[:search]
+    if @search.present?
+      @cocktails = Cocktail.all.select do |cocktail|
+        cocktail[:name].downcase.include? (@search.downcase)
+      end
+    else
+      @cocktails = Cocktail.all
+    end
   end
 
   def show
     @cocktail = Cocktail.find(params[:id])
+  end
+
+  def random
+    @cocktail = Cocktail.all.sample
+    redirect_to cocktail_path(@cocktail)
   end
 
   def new
