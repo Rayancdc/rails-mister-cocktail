@@ -3,8 +3,11 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   storage :fog                    # <- and this
 
+  process resize_to_fit: [800, 800]
+
+
   version :standard do
-    resize_to_fill 400, 300
+    resize_to_fill 250, 300
   end
 
   version :thumb do

@@ -1,10 +1,10 @@
 <div class="navbar-wrapper"></div>
 
-<div class="container">
-  <div class="cocktail-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+<div class="container text-center">
+  <h1><%= link_to "#{@cocktail.name}", cocktail_path(@cocktail), class: "cocktail-title" %></h1>
+  <div class="cocktail-big" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @cocktail.image.url %>');">
     <div class="card-category">Top</div>
     <div class="card-description">
-      <h2><%= link_to "#{@cocktail.name}", cocktail_path(@cocktail), class: "cocktail-name" %></h2>
     </div>
   </div>
   <%= link_to "Back to Cocktails list", cocktails_path, class: "btn btn-primary" %>
